@@ -1,6 +1,7 @@
 - Motor de busqueda por nombre de pokemon
   - Filtro por tipo
   - Filtro por juego ?
-- Solicitar todos los pokemons
+- Solicitar todos los pokemons (Fetch)
+  -Manejar indexiaciones
 - Pagina para detalles de pokemon
 - Modo oscuro
