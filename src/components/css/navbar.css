@@ -1,0 +1,25 @@
+.navbar {
+	background-color: lightcoral;
+	width: 100%;
+	position: relative;
+	font-family: 'Rampart One', cursive;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.navbar-logo {
+	font-size: 2.5vw;
+	padding: 0.3vh 2vw;
+}
+.navbar-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+}
+.navbar-item {
+	font-weight: bold;
+	font-size: 1.5vw;
+	display: block;
+	margin: auto;
+	padding: 0.3vh 2vw;
+}
