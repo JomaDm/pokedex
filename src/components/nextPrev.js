@@ -3,15 +3,15 @@ import './css/nextPrev.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const NextPrev = ({ nextUrl, prevUrl, loadData }) => {
+const NextPrev = ({ actualIndex, handleChangePage, nextList, prevList }) => {
 	return (
 		<div className="pages">
-			{prevUrl && (
-				<button onClick={() => loadData(prevUrl)}>
+			{actualIndex > 0 && (
+				<button onClick={() => prevList()}>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 			)}
-			<button onClick={() => loadData(nextUrl)}>
+			<button onClick={() => nextList()}>
 				<FontAwesomeIcon icon={faArrowRight} />
 			</button>
 		</div>

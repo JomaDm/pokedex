@@ -25,7 +25,7 @@ const Card = ({ pokemon }) => {
 		<div onClick={() => p(pokemon.name)} className="card">
 			{pokemonData && (
 				<LazyLoadImage
-					effect="blur"
+					effect="opacity"
 					src={pokemonData.sprites.front_default}
 					alt={pokemon.name}
 				/>
