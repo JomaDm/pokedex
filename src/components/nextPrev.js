@@ -3,7 +3,7 @@ import './css/nextPrev.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const NextPrev = ({ actualIndex, handleChangePage, nextList, prevList }) => {
+const NextPrev = ({ actualIndex, nextList, prevList }) => {
 	return (
 		<div className="pages">
 			{actualIndex > 0 && (

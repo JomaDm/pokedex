@@ -3,6 +3,7 @@
   - Filtro por juego ?
 - Pagina para detalles de pokemon
 - Modo oscuro
+- Seleccionador de tamano de chunks
 
 ### COMPLETED
 

@@ -8,7 +8,7 @@ import './css/home.css';
 // posible url pokemon?limit=1118
 
 const URL = 'https://pokeapi.co/api/v2/pokemon?limit=1118';
-const CHUNK_SIZE = 30;
+const CHUNK_SIZE = 200;
 
 const Home = () => {
 	const [pokemonInfo, setPokemonInfo] = useState([]);
@@ -52,6 +52,7 @@ const Home = () => {
 	};
 
 	const handleChangePage = (actualIndexPage) => {
+		setActualPageArray(null);
 		setActualPageArray(pageArray[actualIndexPage]);
 	};
 
@@ -75,13 +76,16 @@ const Home = () => {
 	return (
 		<div>
 			<div className="container">
-				{actualPageArray.map((pokemon, index) => {
-					return <Card key={index} pokemon={pokemon}></Card>;
-				})}
+				{actualPageArray === null ? (
+					<h3 className="loading">Loading</h3>
+				) : (
+					actualPageArray.map((pokemon, index) => {
+						return <Card key={index} pokemon={pokemon}></Card>;
+					})
+				)}
 			</div>
 			<NextPrev
 				actualIndex={actualIndex}
-				handleChangePage={handleChangePage}
 				nextList={nextList}
 				prevList={prevList}
 			/>
