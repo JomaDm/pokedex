@@ -4,17 +4,19 @@ import { useEffect, useState } from 'react';
 import Card from './card';
 import NextPrev from './nextPrev';
 import './css/home.css';
+import SearchBar from './search';
 
 // posible url pokemon?limit=1118
 
 const URL = 'https://pokeapi.co/api/v2/pokemon?limit=1118';
-const CHUNK_SIZE = 200;
+const CHUNK_SIZE = 50;
 
 const Home = () => {
 	const [pokemonInfo, setPokemonInfo] = useState([]);
 	const [actualIndex, setActualIndex] = useState(0);
 	const [pageArray, setPageArray] = useState(null);
 	const [actualPageArray, setActualPageArray] = useState([]);
+	const [searchActive, setSearchActive] = useState(false);
 
 	const loadData = async () => {
 		await axios
@@ -75,6 +77,13 @@ const Home = () => {
 
 	return (
 		<div>
+			<SearchBar
+				pokemonInfo={pokemonInfo}
+				actualPageArray={actualPageArray}
+				setActualPageArray={setActualPageArray}
+				setSearchActive={setSearchActive}
+				CHUNK_SIZE={CHUNK_SIZE}
+			/>
 			<div className="container">
 				{actualPageArray === null ? (
 					<h3 className="loading">Loading</h3>
