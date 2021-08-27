@@ -16,7 +16,7 @@ const Home = () => {
 	const [actualIndex, setActualIndex] = useState(0);
 	const [pageArray, setPageArray] = useState(null);
 	const [actualPageArray, setActualPageArray] = useState([]);
-	const [searchActive, setSearchActive] = useState(false);
+	// const [searchActive, setSearchActive] = useState(false);
 
 	const loadData = async () => {
 		await axios
@@ -53,11 +53,6 @@ const Home = () => {
 		setActualIndex(actualIndex - 1);
 	};
 
-	const handleChangePage = (actualIndexPage) => {
-		setActualPageArray(null);
-		setActualPageArray(pageArray[actualIndexPage]);
-	};
-
 	useEffect(() => {
 		if (pokemonInfo.length > 0) {
 			//console.log(pokemonInfo.length);
@@ -67,7 +62,8 @@ const Home = () => {
 
 	useEffect(() => {
 		if (pageArray !== null) {
-			handleChangePage(actualIndex);
+			setActualPageArray(null);
+			setActualPageArray(pageArray[actualIndex]);
 		}
 	}, [actualIndex, pageArray]);
 
@@ -81,7 +77,7 @@ const Home = () => {
 				pokemonInfo={pokemonInfo}
 				actualPageArray={actualPageArray}
 				setActualPageArray={setActualPageArray}
-				setSearchActive={setSearchActive}
+				// setSearchActive={setSearchActive}
 				CHUNK_SIZE={CHUNK_SIZE}
 			/>
 			<div className="container">

@@ -1,7 +1,6 @@
 .card {
 	font-family: 'Karla', sans-serif;
 	box-shadow: 0 0 5px;
-	display: block;
 	margin: 10px;
 	border-radius: 10px;
 	display: flex;
@@ -9,13 +8,22 @@
 	align-items: center;
 	/* border: 2px solid lightgray; */
 }
-
+.no-select-text {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 .card:hover {
 	background-color: rgb(226, 226, 226);
 }
 .card img {
+	padding: auto;
 	display: block;
-	width: 150px;
+	width: 170px;
 }
 .card h3 {
 	display: block;

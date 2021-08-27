@@ -1,7 +1,7 @@
 .search {
 	display: flex;
 	justify-content: center;
-	margin: 2.5% 25%;
+	margin: 2.5% 20%;
 }
 .search input {
 	width: 100%;

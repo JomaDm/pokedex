@@ -8,7 +8,7 @@ const SearchBar = ({
 	pokemonInfo,
 	actualPageArray,
 	setActualPageArray,
-	setSearchActive,
+	// setSearchActive,
 	CHUNK_SIZE,
 }) => {
 	const [inputValue, setInputValue] = useState('');
@@ -16,7 +16,7 @@ const SearchBar = ({
 
 	const handleChangeSearch = (value) => {
 		setInputValue(value.toLowerCase());
-		setSearchActive(value.length > 0);
+		// setSearchActive(value.length > 0);
 		console.log(inputValue);
 	};
 
@@ -36,7 +36,7 @@ const SearchBar = ({
 			.slice(0, CHUNK_SIZE);
 
 		setActualPageArray(Array.from(new Set(aux.concat(aux2))));
-	}, [inputValue]);
+	}, [inputValue, CHUNK_SIZE, pokemonInfo, setActualPageArray]);
 
 	return (
 		<div className="search">

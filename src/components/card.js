@@ -22,7 +22,7 @@ const Card = ({ pokemon }) => {
 	};
 
 	return (
-		<div onClick={() => p(pokemon.name)} className="card">
+		<div onClick={() => p(pokemon.name)} className="card no-select-text">
 			{pokemonData && (
 				<LazyLoadImage
 					effect="opacity"
