@@ -1,4 +1,7 @@
-- Motor de busqueda por nombre de pokemon
+### TODO
+
+- Motor de busqueda por nombre de pokemon ✔️
+  - Filtro por nombre ✔️
   - Filtro por tipo
   - Filtro por juego ?
 - Pagina para detalles de pokemon
