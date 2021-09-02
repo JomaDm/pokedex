@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Card from './card';
 import NextPrev from './nextPrev';
-import './css/home.css';
+import './home.css';
 import SearchBar from './search';
 
 // posible url pokemon?limit=1118

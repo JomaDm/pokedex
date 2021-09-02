@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import './css/card.css';
+import './card.css';
 
 const Card = ({ pokemon }) => {
 	const [pokemonData, setPokemonData] = useState(null);
