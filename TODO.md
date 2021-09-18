@@ -7,8 +7,12 @@
 - Pagina para detalles de pokemon
 - Modo oscuro
 - Seleccionador de tamano de chunks
+- Crear home page
+- Crear about page
 
 ### COMPLETED
 
 - Solicitar todos los pokemons (Fetch) ✔️
   - Manejar indexiaciones ✔️
+- Cambiar home page ✔️
+- Cambiar pokemon page ✔️

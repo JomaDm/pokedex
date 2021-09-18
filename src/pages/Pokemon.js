@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Card from './card';
-import NextPrev from './nextPrev';
-import './home.css';
-import SearchBar from './search';
+import Card from '../components/Card';
+import NextPrev from '../components/NextPrev';
+import './Pokemon.css';
+import SearchBar from '../components/Search';
 
 // posible url pokemon?limit=1118
 
@@ -80,20 +80,16 @@ const Home = () => {
 				// setSearchActive={setSearchActive}
 				CHUNK_SIZE={CHUNK_SIZE}
 			/>
-			<div className="container">
+			<div className='container'>
 				{actualPageArray === null ? (
-					<h3 className="loading">Loading</h3>
+					<h3 className='loading'>Loading</h3>
 				) : (
 					actualPageArray.map((pokemon, index) => {
 						return <Card key={index} pokemon={pokemon}></Card>;
 					})
 				)}
 			</div>
-			<NextPrev
-				actualIndex={actualIndex}
-				nextList={nextList}
-				prevList={prevList}
-			/>
+			<NextPrev actualIndex={actualIndex} nextList={nextList} prevList={prevList} />
 		</div>
 	);
 };

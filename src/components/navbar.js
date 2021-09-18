@@ -1,14 +1,21 @@
 import React from 'react';
-import './navbar.css';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
 	return (
-		<div className="navbar">
-			<h1 className="navbar-logo">Pokedex</h1>
-			<ul className="navbar-list">
-				<li className="navbar-item">Pokemon</li>
-				<li className="navbar-item">Abilities</li>
-				<li className="navbar-item">About</li>
+		<div className='navbar'>
+			<h1 className='navbar-logo'>
+				<Link to='/'>Pokedex</Link>
+			</h1>
+			<ul className='navbar-list'>
+				<li className='navbar-item'>
+					<Link to='/pokemon'>Pokemon</Link>
+				</li>
+				<li className='navbar-item'>Abilities</li>
+				<li className='navbar-item'>
+					<Link to='/about'>About</Link>
+				</li>
 			</ul>
 		</div>
 	);

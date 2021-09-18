@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './search.css';
+import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,28 +28,21 @@ const SearchBar = ({
 	};
 
 	useEffect(() => {
-		let aux = pokemonInfo
-			.filter((element) => element.name.startsWith(inputValue))
-			.slice(0, CHUNK_SIZE);
-		let aux2 = pokemonInfo
-			.filter((element) => element.name.includes(inputValue))
-			.slice(0, CHUNK_SIZE);
+		let aux = pokemonInfo.filter((element) => element.name.startsWith(inputValue)).slice(0, CHUNK_SIZE);
+		let aux2 = pokemonInfo.filter((element) => element.name.includes(inputValue)).slice(0, CHUNK_SIZE);
 
 		setActualPageArray(Array.from(new Set(aux.concat(aux2))));
 	}, [inputValue, CHUNK_SIZE, pokemonInfo, setActualPageArray]);
 
 	return (
-		<div className="search">
-			<FontAwesomeIcon
-				className={'icon-search ' + (focusInput ? 'icon-search-hover' : '')}
-				icon={faSearch}
-			/>
+		<div className='search'>
+			<FontAwesomeIcon className={'icon-search ' + (focusInput ? 'icon-search-hover' : '')} icon={faSearch} />
 			<input
 				onFocus={() => handleOnFocus()}
 				onBlur={() => handleOnBlur()}
 				onChange={(e) => handleChangeSearch(e.target.value)}
-				placeholder="Buscar Pokemon..."
-				type="text"
+				placeholder='Buscar Pokemon...'
+				type='text'
 			/>
 		</div>
 	);
