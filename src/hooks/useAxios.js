@@ -7,17 +7,18 @@ const useAxios = (url) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		setLoading(true);
-		axios
-			.get(url)
-			.then((response) => {
-				setData(response.data);
-				setLoading(false);
-			})
-			.catch((error) => {
+		const axiosGET = async () => {
+			setLoading(true);
+			try {
+				const dataAxios = await axios.get(url);
+				setData(dataAxios.data);
+			} catch (error) {
 				setError(error);
+			} finally {
 				setLoading(false);
-			});
+			}
+		};
+		axiosGET();
 	}, [url]);
 
 	return { data, loading, error };

@@ -5,6 +5,7 @@ import './App.css';
 import About from './pages/About';
 import Pokemon from './pages/Pokemon';
 import PokemonInfo from './components/PokemonInfo';
+import Moves from './pages/Moves';
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route exact path='/about' component={About} />
 					<Route exact path='/pokemon' component={Pokemon} />
 					<Route exact path='/pokemon/:name' component={PokemonInfo} />
+					<Route exact path='/moves/' component={Moves} />
 				</Switch>
 			</Router>
 		</div>

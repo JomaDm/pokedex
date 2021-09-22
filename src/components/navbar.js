@@ -12,7 +12,9 @@ const Navbar = () => {
 				<li className='navbar-item'>
 					<Link to='/pokemon'>Pokemon</Link>
 				</li>
-				<li className='navbar-item'>Abilities</li>
+				<li className='navbar-item'>
+					<Link to='moves'>Abilities</Link>
+				</li>
 				<li className='navbar-item'>
 					<Link to='/about'>About</Link>
 				</li>

@@ -1,0 +1,36 @@
+.pokemon-container {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Karla', sans-serif;
+}
+.pokemon-name {
+	margin: 1rem;
+	font-size: 3rem;
+	text-align: center;
+}
+.pokemon-data-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	gap: 2rem;
+}
+.pokemon-data {
+	align-items: center;
+	line-height: 2rem;
+}
+.pokemon-data > ul {
+	list-style: none;
+}
+.pokemon-data > h2 {
+	font-size: 1.5rem;
+}
+.loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.invisible {
+	display: none;
+}

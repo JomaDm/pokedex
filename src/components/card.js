@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 const Card = ({ pokemon }) => {
@@ -17,15 +18,13 @@ const Card = ({ pokemon }) => {
 			});
 	}, [pokemon.url]);
 
-	const p = (name) => {
-		alert(name);
-	};
-
 	return (
-		<div onClick={() => p(pokemon.name)} className='card no-select-text'>
-			{pokemonData && <LazyLoadImage effect='opacity' src={pokemonData.sprites.front_default} alt={pokemon.name} />}
-			<h3>{pokemon.name}</h3>
-		</div>
+		<Link className='link' exact to={`pokemon/${pokemon.name}`}>
+			<div className='card no-select-text'>
+				{pokemonData && <LazyLoadImage effect='opacity' src={pokemonData.sprites.front_default} alt={pokemon.name} />}
+				<h3>{pokemon.name}</h3>
+			</div>
+		</Link>
 	);
 };
 
