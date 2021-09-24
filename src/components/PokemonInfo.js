@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import useAxios from '../hooks/useAxios';
 import Loader from './Loader';
 import './PokemonInfo.css';

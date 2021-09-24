@@ -16,8 +16,8 @@ function App() {
 					<Route exact path='/' component={Home} />
 					<Route exact path='/about' component={About} />
 					<Route exact path='/pokemon' component={Pokemon} />
-					<Route exact path='/pokemon/:name' component={PokemonInfo} />
 					<Route exact path='/moves/' component={Moves} />
+					<Route exact path='/pokemon/:name' component={PokemonInfo} />
 				</Switch>
 			</Router>
 		</div>
