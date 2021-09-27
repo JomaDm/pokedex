@@ -1,0 +1,8 @@
+.moves-container {
+	font-family: 'Karla', sans-serif;
+}
+.moves-list-container {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 10%;
+}

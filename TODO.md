@@ -12,6 +12,7 @@
 
 ### COMPLETED
 
+- Bug al buscar
 - Solicitar todos los pokemons (Fetch) ✔️
   - Manejar indexiaciones ✔️
 - Cambiar home page ✔️

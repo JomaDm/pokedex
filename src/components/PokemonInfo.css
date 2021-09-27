@@ -15,15 +15,25 @@
 	justify-content: center;
 	gap: 2rem;
 }
+.pokemon-data-container > img {
+	border: 1px solid gray;
+	border-radius: 15px;
+	max-width: 40%;
+	width: 25%;
+	height: 25%;
+}
 .pokemon-data {
 	align-items: center;
 	line-height: 2rem;
+	width: 50%;
 }
 .pokemon-data > ul {
 	list-style: none;
+	padding: 0 10%;
 }
 .pokemon-data > h2 {
-	font-size: 1.5rem;
+	text-align: center;
+	font-size: 1.8rem;
 }
 .loader {
 	display: flex;
@@ -33,4 +43,10 @@
 }
 .invisible {
 	display: none;
+}
+.type-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 0.5rem 2rem;
 }

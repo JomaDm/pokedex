@@ -77,7 +77,7 @@ const Home = () => {
 				pokemonInfo={pokemonInfo}
 				actualPageArray={actualPageArray}
 				setActualPageArray={setActualPageArray}
-				// setSearchActive={setSearchActive}
+				placeholder='Buscar pokemon...'
 				CHUNK_SIZE={CHUNK_SIZE}
 			/>
 			<div className='container'>

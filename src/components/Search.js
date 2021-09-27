@@ -4,20 +4,14 @@ import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = ({
-	pokemonInfo,
-	actualPageArray,
-	setActualPageArray,
-	// setSearchActive,
-	CHUNK_SIZE,
-}) => {
+const SearchBar = ({ pokemonInfo, actualPageArray, setActualPageArray, placeholder, CHUNK_SIZE }) => {
 	const [inputValue, setInputValue] = useState('');
 	const [focusInput, setFocusInput] = useState(false);
 
 	const handleChangeSearch = (value) => {
 		setInputValue(value.toLowerCase());
 		// setSearchActive(value.length > 0);
-		console.log(inputValue);
+		//console.log(inputValue);
 	};
 
 	const handleOnFocus = () => {
@@ -41,7 +35,7 @@ const SearchBar = ({
 				onFocus={() => handleOnFocus()}
 				onBlur={() => handleOnBlur()}
 				onChange={(e) => handleChangeSearch(e.target.value)}
-				placeholder='Buscar Pokemon...'
+				placeholder={placeholder}
 				type='text'
 			/>
 		</div>
