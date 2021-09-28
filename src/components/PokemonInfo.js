@@ -55,8 +55,8 @@ const PokemonInfo = () => {
 						</li>
 						<li>
 							<div className='type-container'>
-								{data.types.map((typeElement) => {
-									return <Type type={typeElement.type.name} />;
+								{data.types.map((typeElement, index) => {
+									return <Type key={index} type={typeElement.type.name} />;
 								})}
 							</div>
 						</li>

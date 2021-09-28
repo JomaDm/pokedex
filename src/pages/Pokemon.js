@@ -61,6 +61,7 @@ const Pokemon = () => {
 			//console.log(pokemonInfo.length);
 			let arrayDivided = divideArray(pokemonInfo, chunkSize);
 			setPageArray(arrayDivided);
+			//console.log(arrayDivided.length);
 			setPageArrayLimit(arrayDivided.length);
 		}
 	}, [pokemonInfo, chunkSize]);

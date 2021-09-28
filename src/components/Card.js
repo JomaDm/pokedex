@@ -19,7 +19,7 @@ const Card = ({ pokemon }) => {
 	}, [pokemon.url]);
 
 	return (
-		<Link className='link' exact to={`pokemon/${pokemon.name}`}>
+		<Link className='link' to={`pokemon/${pokemon.name}`}>
 			<div className='card no-select-text'>
 				{pokemonData && <LazyLoadImage effect='opacity' src={pokemonData.sprites.front_default} alt={pokemon.name} />}
 				<h3>{pokemon.name}</h3>
