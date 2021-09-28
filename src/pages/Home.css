@@ -1,0 +1,26 @@
+.home-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	margin: 3rem 0;
+	line-height: 4rem;
+}
+.home-container img {
+	width: 30%;
+	height: 30%;
+}
+.home-container h2 {
+	font-family: 'Rampart One', cursive;
+	color: black;
+	word-wrap: break-word;
+	font-size: 5rem;
+	margin-bottom: 2rem;
+}
+.home-container p {
+	font-size: 2rem;
+	font-family: 'Karla', sans-serif;
+}
+.home-container h3 {
+	font-family: 'Rampart One', cursive;
+	font-size: 3rem;
+}
