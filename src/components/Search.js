@@ -4,7 +4,15 @@ import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = ({ pokemonInfo, actualPageArray, setActualPageArray, placeholder, CHUNK_SIZE }) => {
+const SearchBar = ({
+	children,
+	pokemonInfo,
+	actualPageArray,
+	setActualPageArray,
+	placeholder,
+	chunkSize,
+	setChunkSize,
+}) => {
 	const [inputValue, setInputValue] = useState('');
 	const [focusInput, setFocusInput] = useState(false);
 
@@ -22,22 +30,25 @@ const SearchBar = ({ pokemonInfo, actualPageArray, setActualPageArray, placehold
 	};
 
 	useEffect(() => {
-		let aux = pokemonInfo.filter((element) => element.name.startsWith(inputValue)).slice(0, CHUNK_SIZE);
-		let aux2 = pokemonInfo.filter((element) => element.name.includes(inputValue)).slice(0, CHUNK_SIZE);
+		let aux = pokemonInfo.filter((element) => element.name.startsWith(inputValue)).slice(0, chunkSize);
+		let aux2 = pokemonInfo.filter((element) => element.name.includes(inputValue)).slice(0, chunkSize);
 
 		setActualPageArray(Array.from(new Set(aux.concat(aux2))));
-	}, [inputValue, CHUNK_SIZE, pokemonInfo, setActualPageArray]);
+	}, [inputValue, chunkSize, pokemonInfo, setActualPageArray]);
 
 	return (
-		<div className='search'>
-			<FontAwesomeIcon className={'icon-search ' + (focusInput ? 'icon-search-hover' : '')} icon={faSearch} />
-			<input
-				onFocus={() => handleOnFocus()}
-				onBlur={() => handleOnBlur()}
-				onChange={(e) => handleChangeSearch(e.target.value)}
-				placeholder={placeholder}
-				type='text'
-			/>
+		<div>
+			<div className='search'>
+				<FontAwesomeIcon className={'icon-search ' + (focusInput ? 'icon-search-hover' : '')} icon={faSearch} />
+				<input
+					onFocus={() => handleOnFocus()}
+					onBlur={() => handleOnBlur()}
+					onChange={(e) => handleChangeSearch(e.target.value)}
+					placeholder={placeholder}
+					type='text'
+				/>
+			</div>
+			<div className='options'>{children}</div>
 		</div>
 	);
 };

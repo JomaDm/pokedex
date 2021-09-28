@@ -32,3 +32,10 @@
 	transition: 0.5s;
 	color: lightcoral;
 }
+.options {
+	font-family: 'Karla', sans-serif;
+	display: flex;
+	justify-content: center;
+	margin: 2.5% 20%;
+	align-items: center;
+}

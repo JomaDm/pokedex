@@ -6,6 +6,7 @@ import About from './pages/About';
 import Pokemon from './pages/Pokemon';
 import PokemonInfo from './components/PokemonInfo';
 import Moves from './pages/Moves';
+import Error404 from './pages/Error404';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route exact path='/pokemon' component={Pokemon} />
 					<Route exact path='/moves/' component={Moves} />
 					<Route exact path='/pokemon/:name' component={PokemonInfo} />
+					<Route path='*' component={Error404} />
 				</Switch>
 			</Router>
 		</div>

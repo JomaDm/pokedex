@@ -5,18 +5,21 @@ import Card from '../components/Card';
 import NextPrev from '../components/NextPrev';
 import './Pokemon.css';
 import SearchBar from '../components/Search';
+import Loader from '../components/Loader';
+import Mostrados from '../components/Mostrados';
 
 // posible url pokemon?limit=1118
 
 const URL = 'https://pokeapi.co/api/v2/pokemon?limit=1118';
-const CHUNK_SIZE = 50;
+//const CHUNK_SIZE = 50;
 
-const Home = () => {
+const Pokemon = () => {
 	const [pokemonInfo, setPokemonInfo] = useState([]);
 	const [actualIndex, setActualIndex] = useState(0);
 	const [pageArray, setPageArray] = useState(null);
 	const [actualPageArray, setActualPageArray] = useState([]);
-	// const [searchActive, setSearchActive] = useState(false);
+	const [chunkSize, setChunkSize] = useState(20);
+	const [pageArrayLimit, setPageArrayLimit] = useState(0);
 
 	const loadData = async () => {
 		await axios
@@ -56,13 +59,15 @@ const Home = () => {
 	useEffect(() => {
 		if (pokemonInfo.length > 0) {
 			//console.log(pokemonInfo.length);
-			setPageArray(divideArray(pokemonInfo, CHUNK_SIZE));
+			let arrayDivided = divideArray(pokemonInfo, chunkSize);
+			setPageArray(arrayDivided);
+			setPageArrayLimit(arrayDivided.length);
 		}
-	}, [pokemonInfo]);
+	}, [pokemonInfo, chunkSize]);
 
 	useEffect(() => {
 		if (pageArray !== null) {
-			setActualPageArray(null);
+			setActualPageArray([]);
 			setActualPageArray(pageArray[actualIndex]);
 		}
 	}, [actualIndex, pageArray]);
@@ -78,20 +83,28 @@ const Home = () => {
 				actualPageArray={actualPageArray}
 				setActualPageArray={setActualPageArray}
 				placeholder='Buscar pokemon...'
-				CHUNK_SIZE={CHUNK_SIZE}
-			/>
+				chunkSize={chunkSize}
+				setChunkSize={setChunkSize}>
+				<Mostrados setChunkSize={setChunkSize} />
+			</SearchBar>
 			<div className='container'>
-				{actualPageArray === null ? (
-					<h3 className='loading'>Loading</h3>
+				{actualPageArray.length <= 0 ? (
+					<Loader />
 				) : (
 					actualPageArray.map((pokemon, index) => {
 						return <Card key={index} pokemon={pokemon}></Card>;
 					})
 				)}
 			</div>
-			<NextPrev actualIndex={actualIndex} nextList={nextList} prevList={prevList} />
+			<NextPrev
+				pageArrayLimit={pageArrayLimit}
+				chunkSize={chunkSize}
+				actualIndex={actualIndex}
+				nextList={nextList}
+				prevList={prevList}
+			/>
 		</div>
 	);
 };
 
-export default Home;
+export default Pokemon;

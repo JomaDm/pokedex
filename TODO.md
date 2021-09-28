@@ -9,10 +9,12 @@
 - Seleccionador de tamano de chunks
 - Crear home page
 - Crear about page
+- Bug al buscar
+- Tipo de pokemon
+- Considerar hacer chunks por querys
 
 ### COMPLETED
 
-- Bug al buscar
 - Solicitar todos los pokemons (Fetch) ✔️
   - Manejar indexiaciones ✔️
 - Cambiar home page ✔️
