@@ -1,6 +1,5 @@
 .home-container {
 	display: flex;
-	width: 100%;
 	justify-content: space-around;
 	margin: 3rem 0;
 	line-height: 4rem;

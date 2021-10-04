@@ -44,8 +44,8 @@ const Abilities = () => {
 				CHUNK_SIZE={50}
 			/>
 			<div className='moves-list-container'>
-				{actualPageArray.map((element, index) => {
-					return <MovesRow key={index} name={element.name} />;
+				{actualPageArray.map((element) => {
+					return <MovesRow key={JSON.stringify(element)} name={element.name} />;
 				})}
 			</div>
 		</div>

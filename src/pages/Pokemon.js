@@ -92,8 +92,8 @@ const Pokemon = () => {
 				{actualPageArray.length <= 0 ? (
 					<Loader />
 				) : (
-					actualPageArray.map((pokemon, index) => {
-						return <Card key={index} pokemon={pokemon}></Card>;
+					actualPageArray.map((pokemon) => {
+						return <Card key={JSON.stringify(pokemon)} pokemon={pokemon}></Card>;
 					})
 				)}
 			</div>

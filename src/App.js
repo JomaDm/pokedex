@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import './App.css';
@@ -10,8 +10,8 @@ import Error404 from './pages/Error404';
 
 function App() {
 	return (
-		<div className='App'>
-			<Router>
+		<div className='App gradient'>
+			<HashRouter>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={Home} />
@@ -21,7 +21,7 @@ function App() {
 					<Route exact path='/pokemon/:name' component={PokemonInfo} />
 					<Route path='*' component={Error404} />
 				</Switch>
-			</Router>
+			</HashRouter>
 		</div>
 	);
 }

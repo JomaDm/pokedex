@@ -6,6 +6,7 @@ import './Card.css';
 
 const Card = ({ pokemon }) => {
 	const [pokemonData, setPokemonData] = useState(null);
+	const name = pokemon.name;
 	useEffect(() => {
 		axios
 			.get(pokemon.url)
@@ -22,7 +23,7 @@ const Card = ({ pokemon }) => {
 		<Link className='link' to={`pokemon/${pokemon.name}`}>
 			<div className='card no-select-text'>
 				{pokemonData && <LazyLoadImage effect='opacity' src={pokemonData.sprites.front_default} alt={pokemon.name} />}
-				<h3>{pokemon.name}</h3>
+				<h3>{`${name.charAt(0).toUpperCase()}${name.slice(1).toLowerCase()}`}</h3>
 			</div>
 		</Link>
 	);

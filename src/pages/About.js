@@ -5,19 +5,13 @@ const About = () => {
 	return (
 		<div>
 			<h2 className='title'>About page</h2>
-			<h4 className='subtitle'>
-				Informaci&oacute;n de creaci&oacute;n
-			</h4>
+			<h4 className='subtitle'>Informaci&oacute;n de creaci&oacute;n</h4>
 			<div className='text-content'>
 				<p>
-					Esta pagina fue creada por Jos&eacute; Manuel
-					Dom&iacute;nguez. Con la finalidad de aplicar los
-					conocimientos aprendidos de ReactJs.{' '}
+					Esta pagina fue creada por Jos&eacute; Manuel Dom&iacute;nguez. Con la finalidad de aplicar los conocimientos
+					aprendidos de ReactJs.{' '}
 				</p>
-				<p>
-					Se utilizaron las siguientes herramientas para su
-					desarrollo y publicacion:
-				</p>
+				<p>Se utilizaron las siguientes herramientas para su desarrollo y publicacion:</p>
 				<ol>
 					<li>ReactJs</li>
 					<ul>

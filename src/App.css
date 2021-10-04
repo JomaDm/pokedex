@@ -2,3 +2,10 @@
 	margin: 0;
 	padding: 0;
 }
+/* .gradient {
+	background: linear-gradient(lightblue, rgb(89, 202, 240), lightcoral, lightgreen) fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+} */
