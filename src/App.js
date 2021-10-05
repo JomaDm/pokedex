@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import './App.css';
@@ -18,7 +18,7 @@ function App() {
 					<Route exact path='/about' component={About} />
 					<Route exact path='/pokemon' component={Pokemon} />
 					<Route exact path='/moves/' component={Moves} />
-					<Route exact path='/pokemon/:name' component={PokemonInfo} />
+					<Route path='/pokemon/:name' component={PokemonInfo} />
 					<Route path='*' component={Error404} />
 				</Switch>
 			</HashRouter>
